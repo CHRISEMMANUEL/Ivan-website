@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hands on activity</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <!--Internal css -->
     <style>
         body {
             background-color: #f0f8ff;
@@ -43,13 +45,59 @@
             color: #333;
             text-align: center;
         }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+        }
     </style>
 </head>
+
+
+<!---This is the body of the page-->
 <body>
     <h1>Welcome to my website</h1>
     <p>Hello! My name is Ivan and this is my style website. </p>
 
-    <img src="robot.png" alt="Robot Image" width="300">
+    <!--Button to show Date and time-->
+    <button type="button"
+        onclick="document.getElementById('demo').innerHTML = Date()">
+        Click me to display Date and Time.</button>
+
+    <p id="demo"></p>
+
+
+<!----This is the script to on a bulb-->
+   <script>
+    function light(sw) {
+    var pic;
+    if (sw == 0) {
+        pic = "pic_bulboff.gif"
+    } else {
+        pic = "download.jpeg"
+    }
+  document.getElementById('myImage').src = pic;
+}
+</script>
+
+<img id="myImage" src="pic_bulboff.gif" width="100" height="180">
+
+<p>
+<button type="button" onclick="light(1)">Light On</button>
+<button type="button" onclick="light(0)">Light Off</button>
+</p>
+    <!--<img src="robot.png" alt="Robot Image" width="300">-->
 
     <h1>My weekly schedule of Html and css class</h1>
       <table border="1" cellpadding="5">
@@ -78,8 +126,6 @@
             <td>10:00 AM - 11:30 AM</td>
             <td>Css Class</td>
       </table>
-
         <h2>Thank you for visiting my website!</h2>
-    
 </body>
 </html>
